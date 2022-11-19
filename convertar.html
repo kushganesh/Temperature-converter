@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+        }
+
+        #box {
+            background:linear-gradient(rgb(214, 72, 72), rgb(53, 146, 53));
+            border: 1px solid;
+            border-bottom: none;
+            width: calc(100vw-2px);
+            height: 100vh;
+        }
+
+        #box1 {
+            margin-top: 20px;
+            margin-left: 20%;
+            width: 60%;
+            border: 1px solid white;
+            height: 70px;
+            padding-top: 15px;
+            text-align: center;
+            background-image: linear-gradient(rgb(214, 72, 72), rgb(53, 146, 53));
+            color: white;
+            text-shadow:  16px 22px 11px rgba(0, 0, 0, 0.199);
+            box-shadow: 16px 22px 11px rgba(0, 0, 0, 0.199);
+        }
+
+        #box2 {
+            width: 80%;
+            height: 400px;
+            border: 1px solid;
+            margin: auto;
+            margin-top: 15px;
+            background-image: linear-gradient(rgb(214, 72, 72), rgb(53, 146, 53));
+            position: relative;
+            color: white;
+            box-shadow: 16px 22px 11px rgba(0, 0, 0, 0.199);
+        }
+
+        #box2 h1 {
+            margin-left: 25%;
+            margin-top: 30px;
+            text-shadow:  16px 22px 11px rgba(0, 0, 0, 0.199);
+        }
+
+        .input {
+            width: 15%;
+            height: 25px;
+            text-align: center;
+            outline: none;
+            background-color: antiquewhite;
+            border-top-left-radius: 6px;
+            border-bottom-right-radius: 6px;
+            position: absolute;
+            box-shadow: 16px 22px 11px rgba(0, 0, 0, 0.199);
+        }
+
+        #n1 {
+            left: 32%;
+            top: 38%;
+        }
+
+        #n2 {
+            left: 62%;
+            top: 38%
+        }
+
+        #n3 {
+            left: 62%;
+            top: 50%;
+        }
+
+        .label {
+            position: absolute;
+            font-size: 18px;
+            padding: 3px;
+            color: white;
+            text-shadow:  16px 22px 11px rgba(0, 0, 0, 0.199)
+        }
+
+        #jkl {
+            width: 16%;
+            height: 30px;
+            position: absolute;
+            left: 320px;
+            top: 200px;
+            text-align: center;
+            outline: none;
+            background-color: antiquewhite;
+            border-top-left-radius: 6px;
+            border-bottom-right-radius: 6px;
+        }
+        #jkl:hover
+        {
+            background: linear-gradient(red,green);
+            color: white;
+            cursor:pointer;
+            
+        }
+
+        #l1 {
+            left: 22%;
+            top: 38%;
+            font-size: 18px;;
+        }
+
+        #l2 {
+            left: 53%;
+            top: 38%;
+        }
+
+        #l3 {
+            left: 50%;
+            top: 50%;
+        }
+
+        #l4 {
+            left: 24%;
+            top: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+
+        <div id="box1">
+            <h1>WELCOME TO MY FRIEND</h1>
+        </div>
+
+        <div id="box2">
+            <h1>TEMPERATURE CONVERTER</h1>
+            <form action="" onsubmit="love();return false;">
+            <label id="l1" class="label" style="font-size: 20px;">CELSIUS</label>
+            <input type="number" placeholder="Enter the Number" class="input" id="n1" />
+          
+            <input id="jkl" type="submit"  value="Submit"/>
+           
+            <label class="label" id="l3">FEHRENHIT</label>
+            <label class="label" id="l2">KELVIN</label><br>
+            <label id="l4" class="label" style="font-size: 20px;">Submit</label>
+            </form>
+            <input type="text" placeholder="Kelvin" class="input" id="n2" />
+            <input type="text" placeholder="Fehrenhit" class="input" id="n3" />
+
+        </div>
+    </div>
+
+    <script>
+        let kel; let fere;
+        const love = () => {
+            let n1 = document.getElementById('n1').value;
+            console.log(n1);
+            if(n1.length !=0&&(n1>=0&&n1<=100)){
+            fere = ((n1 * 1.8) + 32);
+            kel = (Number.parseFloat(n1) + 273.15);
+            document.getElementById('n2').value = kel.toFixed(3);
+            document.getElementById('n3').value = fere.toFixed(3);
+            }
+            else
+            {
+                alert("CELSIUS RANGE BETWEEN 0 TO 100 ONLY");
+               
+            }
+            
+        }
+    </script>
+</body>
+
+</html>
